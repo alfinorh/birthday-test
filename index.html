@@ -195,7 +195,7 @@
       display: none;
     }
 
-    /* ================= LAYER 2: TRANSISI AMPLOP ================= */
+    /* ================= LAYER 2: TRANSISI AMPLOP (DESKTOP DEFAULT) ================= */
     #interactive-gate {
       position: fixed;
       top: 0;
@@ -273,12 +273,13 @@
       border: 2px solid #ffccd5;
     }
 
+    /* POSISI FOTO DESKTOP */
     .love-frame-left {
       position: absolute;
-      left: 85px;
-      top: 25px;
-      width: 210px;
-      height: 210px;
+      left: 120px;
+      bottom: 20px;
+      width: 190px;
+      height: 190px;
       background: white;
       padding: 10px;
       box-shadow: 0 12px 28px rgba(0,0,0,0.12);
@@ -300,26 +301,28 @@
       padding: 12px 12px 32px 12px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.12);
       border-radius: 4px;
-      z-index: 5;
     }
 
     .polaroid-stack img {
-      width: 140px;
-      height: 140px;
+      width: 130px;
+      height: 130px;
       object-fit: cover;
       display: block;
     }
 
-    .pol-left-bottom { left: 90px; bottom: 25px; transform: rotate(-6deg); z-index: 11; }
-    .pol-right-1 { right: 85px; top: 25px; transform: rotate(12deg); z-index: 5; }
-    .pol-right-2 { right: 55px; top: 165px; transform: rotate(3deg); z-index: 6; }
-    .pol-right-3 { right: 90px; bottom: 20px; transform: rotate(-8deg); z-index: 7; }
+    /* 2 FOTO ATAS AMPLOP */
+    .pol-right-1 { left: 180px; top: 15px; transform: rotate(-8deg); z-index: 6; }
+    .pol-right-2 { right: 180px; top: 15px; transform: rotate(10deg); z-index: 6; }
+
+    /* 3 FOTO BAWAH AMPLOP */
+    .pol-left-bottom { left: 260px; bottom: 15px; transform: rotate(4deg); z-index: 11; }
+    .pol-right-3 { right: 140px; bottom: 15px; transform: rotate(-12deg); z-index: 11; }
 
     .png-ornament { position: absolute; pointer-events: none; }
-    .flower-top-left { width: 100px; left: 195px; top: 90px; z-index: 15; animation: flowerSway 3.8s infinite ease-in-out; }
-    .flower-bottom-right { width: 110px; right: 200px; bottom: 105px; z-index: 15; animation: flowerSway 4.2s infinite ease-in-out reverse; }
-    .butterfly-png { width: 100px; left: 85px; bottom: -5px; z-index: 22; animation: butterflyWiggle 3s infinite ease-in-out; }
-    .ornament-top-right-mid-polaroid { width: 70px; right: 35px; top: 145px; z-index: 25; animation: ornamentFloat 3.5s infinite ease-in-out; }
+    .flower-top-left { width: 90px; left: 100px; top: 20px; z-index: 15; animation: flowerSway 3.8s infinite ease-in-out; }
+    .flower-bottom-right { width: 100px; right: 100px; bottom: 20px; z-index: 15; animation: flowerSway 4.2s infinite ease-in-out reverse; }
+    .butterfly-png { width: 85px; left: 100px; bottom: 150px; z-index: 22; animation: butterflyWiggle 3s infinite ease-in-out; }
+    .ornament-top-right-mid-polaroid { width: 65px; right: 120px; top: 160px; z-index: 25; animation: ornamentFloat 3.5s infinite ease-in-out; }
 
     @keyframes butterflyWiggle {
       0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
@@ -755,7 +758,7 @@
       100% { opacity: 0; transform: translate(-50%, -120px) scale(1.6); }
     }
 
-    /* ================= OPTIMASI RESPONSIVE HP (PERBAIKAN PROPORSI AMPLOP, LOVE FRAME & POLAROID) ================= */
+    /* ================= OPTIMASI RESPONSIVE HP (REVISI POSISI 2 ATAS & 3 BAWAH) ================= */
     @media (max-width: 600px) {
       h1 {
         font-size: 2.8rem;
@@ -765,19 +768,19 @@
       .gate-container {
         width: 100%;
         max-width: 360px;
-        height: 440px;
+        height: 480px;
         transform: none;
       }
 
       /* Amplop di HP */
       .envelope-wrapper {
-        width: 250px;
-        height: 165px;
+        width: 240px;
+        height: 160px;
         z-index: 10;
       }
 
       .envelope-text-title {
-        font-size: 2.3rem;
+        font-size: 2.2rem;
       }
 
       .envelope-date {
@@ -785,66 +788,66 @@
       }
 
       .wax-seal {
-        width: 36px;
-        height: 36px;
-        margin-top: 10px;
+        width: 34px;
+        height: 34px;
+        margin-top: 8px;
       }
 
-      /* 1. PERBAIKAN LOVE FRAME (Diproporsikan lebih mungil & presisi di kiri) */
-      .love-frame-left {
-        width: 115px;
-        height: 115px;
-        left: 5px;
-        top: 35px;
-        padding: 6px;
-        transform: rotate(-12deg);
-        z-index: 12;
-      }
-
-      /* 2. POLAROID KIRI BAWAH */
-      .pol-left-bottom {
-        left: 15px;
-        bottom: 55px;
-        transform: rotate(-6deg);
-        z-index: 11;
-      }
-
-      /* 3. PERBAIKAN POLAROID KANAN (Agar TIDAK KETIMPA AMPLOP lagi!) */
+      /* SKALA FOTO POLAROID HP */
       .polaroid-stack {
         padding: 5px 5px 16px 5px;
       }
 
       .polaroid-stack img {
-        width: 82px;
-        height: 82px;
+        width: 76px;
+        height: 76px;
       }
 
+      /* --- 2 POLAROID DI ATAS AMPLOP --- */
       .pol-right-1 {
-        right: 8px;
-        top: 20px;
-        transform: rotate(15deg);
-        z-index: 13; /* Menaikkan Z-index agar tampil bebas & menumpuk manis di atas pinggiran amplop */
+        left: 30px;
+        top: 25px;
+        transform: rotate(-10deg);
+        z-index: 5;
       }
 
       .pol-right-2 {
-        right: 2px;
-        top: 125px;
-        transform: rotate(8deg);
-        z-index: 14; /* Dibuat mencuat ke luar dari belakang amplop */
+        right: 30px;
+        top: 25px;
+        transform: rotate(12deg);
+        z-index: 5;
       }
 
-      .pol-right-3 {
-        right: 20px;
-        bottom: 45px;
+      /* --- 3 POLAROID DI BAWAH AMPLOP --- */
+      .love-frame-left {
+        width: 105px;
+        height: 105px;
+        left: 15px;
+        bottom: 35px;
+        padding: 5px;
         transform: rotate(-12deg);
         z-index: 12;
       }
 
-      /* 4. PENYESUAIAN POSISI ORNAMEN DEKORASI */
-      .flower-top-left { left: 0px; top: 10px; width: 55px; z-index: 20; }
-      .flower-bottom-right { right: 5px; bottom: 20px; width: 60px; z-index: 20; }
-      .butterfly-png { left: 5px; bottom: 15px; width: 55px; z-index: 22; }
-      .ornament-top-right-mid-polaroid { right: -5px; top: 105px; width: 45px; z-index: 25; }
+      .pol-left-bottom {
+        left: 125px;
+        bottom: 25px;
+        transform: rotate(4deg);
+        z-index: 11;
+      }
+
+      .pol-right-3 {
+        right: 15px;
+        bottom: 35px;
+        transform: rotate(-10deg);
+        z-index: 12;
+      }
+
+      /* --- PENYESUAIAN ORNAMEN HIASAN LAYER 2 --- */
+      .flower-top-left { left: 10px; top: 15px; width: 50px; z-index: 20; }
+      .flower-bottom-right { right: 10px; bottom: 15px; width: 55px; z-index: 20; }
+      .butterfly-png { left: 15px; top: 180px; width: 45px; z-index: 22; }
+      .ornament-top-right-mid-polaroid { right: 15px; top: 180px; width: 42px; z-index: 25; }
 
       /* Sticky Nav HP */
       .sticky-nav {
