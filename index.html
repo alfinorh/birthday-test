@@ -755,25 +755,83 @@
       100% { opacity: 0; transform: translate(-50%, -120px) scale(1.6); }
     }
 
-    /* ================= OPTIMASI KHUSUS TAMPILAN HP (MOBILE RESPONSIVE) ================= */
+    /* ================= OPTIMASI KHUSUS TAMPILAN HP (MOBILE RESPONSIVE & LAYOUT REVISI LAYER 2) ================= */
     @media (max-width: 600px) {
       h1 {
         font-size: 2.8rem;
       }
 
+      /* Container Amplop Layer 2 Presisi untuk Layar HP */
       .gate-container {
-        transform: scale(0.72);
-        transform-origin: center center;
-        height: 380px;
+        width: 100%;
+        max-width: 360px;
+        height: 420px;
+        transform: none; /* Tanpa scaling kasar agar foto dan amplop tetap sangat tajam */
       }
 
-      .pol-right-2, .pol-right-3 {
-        display: none;
+      /* Ukuran Amplop HP */
+      .envelope-wrapper {
+        width: 270px;
+        height: 180px;
       }
 
-      .flower-top-left { left: 40px; top: 10px; width: 80px; }
-      .flower-bottom-right { right: 40px; bottom: 10px; width: 80px; }
+      .envelope-text-title {
+        font-size: 2.5rem;
+      }
 
+      .envelope-date {
+        font-size: 0.75rem;
+      }
+
+      /* REVISI POLAROID TUMPUK DI HP - Tersusun simetris dan rapi di belakang amplop */
+      .love-frame-left {
+        width: 140px;
+        height: 140px;
+        left: 20px;
+        top: 25px;
+        transform: rotate(-14deg);
+      }
+
+      .polaroid-stack {
+        padding: 6px 6px 20px 6px;
+      }
+
+      .polaroid-stack img {
+        width: 95px;
+        height: 95px;
+      }
+
+      .pol-left-bottom {
+        left: 35px;
+        bottom: 50px;
+        transform: rotate(-8deg);
+      }
+
+      .pol-right-1 {
+        right: 25px;
+        top: 25px;
+        transform: rotate(14deg);
+      }
+
+      .pol-right-2 {
+        right: 15px;
+        top: 135px;
+        transform: rotate(6deg);
+      }
+
+      .pol-right-3 {
+        right: 35px;
+        bottom: 45px;
+        transform: rotate(-10deg);
+      }
+
+      /* Penyesuaian Ornamen di HP */
+      .flower-top-left { left: 10px; top: 15px; width: 65px; }
+      .flower-bottom-right { right: 10px; bottom: 25px; width: 70px; }
+      .butterfly-png { left: 15px; bottom: 10px; width: 65px; }
+      .ornament-top-right-mid-polaroid { right: 10px; top: 110px; width: 50px; }
+
+      /* Sticky Nav HP */
       .sticky-nav {
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -788,6 +846,7 @@
         padding: 5px 10px;
       }
 
+      /* Galeri HP */
       .gallery {
         gap: 12px;
       }
@@ -1035,16 +1094,16 @@
     // ================= EFEK KEJUTAN PUSARAN BUNGA MELINGKAR (OPTIMASI RESPONSIVE HP) =================
     function triggerFlowerVortex(onCoverCallback) {
       const flowerSlots = [
-        'image/flower.png',
-        'image/flower.png',
-        'image/flower.png',
-        'image/flower.png',
-        'image/flower.png',
-        'image/flower.png',
-        'image/flower.png',
-        'image/flower.png',
-        'image/flower.png',
-        'image/flower.png'
+        'image/flower1.png',
+        'image/flower2.png',
+        'image/flower3.png',
+        'image/flower4.png',
+        'image/flower5.png',
+        'image/flower6.png',
+        'image/flower7.png',
+        'image/flower8.png',
+        'image/flower9.png',
+        'image/flower10.png'
       ];
 
       const totalParticles = 80;
