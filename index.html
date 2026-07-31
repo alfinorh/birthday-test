@@ -728,7 +728,7 @@
     .modal-text {
       font-size: 0.95rem;
       line-height: 1.6;
-      color: #444;
+      color: #4a3e3e;
       margin-bottom: 20px;
     }
 
@@ -755,81 +755,96 @@
       100% { opacity: 0; transform: translate(-50%, -120px) scale(1.6); }
     }
 
-    /* ================= OPTIMASI KHUSUS TAMPILAN HP (MOBILE RESPONSIVE & LAYOUT REVISI LAYER 2) ================= */
+    /* ================= OPTIMASI RESPONSIVE HP (PERBAIKAN PROPORSI AMPLOP, LOVE FRAME & POLAROID) ================= */
     @media (max-width: 600px) {
       h1 {
         font-size: 2.8rem;
       }
 
-      /* Container Amplop Layer 2 Presisi untuk Layar HP */
+      /* Container Utuh Gate Layer 2 di HP */
       .gate-container {
         width: 100%;
         max-width: 360px;
-        height: 420px;
-        transform: none; /* Tanpa scaling kasar agar foto dan amplop tetap sangat tajam */
+        height: 440px;
+        transform: none;
       }
 
-      /* Ukuran Amplop HP */
+      /* Amplop di HP */
       .envelope-wrapper {
-        width: 270px;
-        height: 180px;
+        width: 250px;
+        height: 165px;
+        z-index: 10;
       }
 
       .envelope-text-title {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
       }
 
       .envelope-date {
-        font-size: 0.75rem;
+        font-size: 0.72rem;
       }
 
-      /* REVISI POLAROID TUMPUK DI HP - Tersusun simetris dan rapi di belakang amplop */
+      .wax-seal {
+        width: 36px;
+        height: 36px;
+        margin-top: 10px;
+      }
+
+      /* 1. PERBAIKAN LOVE FRAME (Diproporsikan lebih mungil & presisi di kiri) */
       .love-frame-left {
-        width: 140px;
-        height: 140px;
-        left: 20px;
-        top: 25px;
-        transform: rotate(-14deg);
+        width: 115px;
+        height: 115px;
+        left: 5px;
+        top: 35px;
+        padding: 6px;
+        transform: rotate(-12deg);
+        z-index: 12;
       }
 
+      /* 2. POLAROID KIRI BAWAH */
+      .pol-left-bottom {
+        left: 15px;
+        bottom: 55px;
+        transform: rotate(-6deg);
+        z-index: 11;
+      }
+
+      /* 3. PERBAIKAN POLAROID KANAN (Agar TIDAK KETIMPA AMPLOP lagi!) */
       .polaroid-stack {
-        padding: 6px 6px 20px 6px;
+        padding: 5px 5px 16px 5px;
       }
 
       .polaroid-stack img {
-        width: 95px;
-        height: 95px;
-      }
-
-      .pol-left-bottom {
-        left: 35px;
-        bottom: 50px;
-        transform: rotate(-8deg);
+        width: 82px;
+        height: 82px;
       }
 
       .pol-right-1 {
-        right: 25px;
-        top: 25px;
-        transform: rotate(14deg);
+        right: 8px;
+        top: 20px;
+        transform: rotate(15deg);
+        z-index: 13; /* Menaikkan Z-index agar tampil bebas & menumpuk manis di atas pinggiran amplop */
       }
 
       .pol-right-2 {
-        right: 15px;
-        top: 135px;
-        transform: rotate(6deg);
+        right: 2px;
+        top: 125px;
+        transform: rotate(8deg);
+        z-index: 14; /* Dibuat mencuat ke luar dari belakang amplop */
       }
 
       .pol-right-3 {
-        right: 35px;
+        right: 20px;
         bottom: 45px;
-        transform: rotate(-10deg);
+        transform: rotate(-12deg);
+        z-index: 12;
       }
 
-      /* Penyesuaian Ornamen di HP */
-      .flower-top-left { left: 10px; top: 15px; width: 65px; }
-      .flower-bottom-right { right: 10px; bottom: 25px; width: 70px; }
-      .butterfly-png { left: 15px; bottom: 10px; width: 65px; }
-      .ornament-top-right-mid-polaroid { right: 10px; top: 110px; width: 50px; }
+      /* 4. PENYESUAIAN POSISI ORNAMEN DEKORASI */
+      .flower-top-left { left: 0px; top: 10px; width: 55px; z-index: 20; }
+      .flower-bottom-right { right: 5px; bottom: 20px; width: 60px; z-index: 20; }
+      .butterfly-png { left: 5px; bottom: 15px; width: 55px; z-index: 22; }
+      .ornament-top-right-mid-polaroid { right: -5px; top: 105px; width: 45px; z-index: 25; }
 
       /* Sticky Nav HP */
       .sticky-nav {
@@ -1125,7 +1140,6 @@
           flower.style.setProperty('--rot', `${angle}deg`);
           flower.style.setProperty('--radius', `${radius}px`);
           
-          // Penyesuaian ukuran bunga di HP agar tidak lag / pecah
           const baseSize = isMobile ? 45 : 70;
           const randomSize = baseSize + Math.random() * (isMobile ? 25 : 50);
           flower.style.width = `${randomSize}px`;
