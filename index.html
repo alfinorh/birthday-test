@@ -71,7 +71,7 @@
     /* ================= EFEK PUSARAN BUNGA MELINGKAR (10 SLOT PNG FULLSCREEN TOTAL) ================= */
     .vortex-flower {
       position: fixed;
-      width: 80px; /* Ukuran dasar diperbesar */
+      width: 80px;
       height: 80px;
       object-fit: contain;
       user-select: none;
@@ -95,12 +95,10 @@
         opacity: 1;
       }
       75% {
-        /* Puncak ledakan bunga menutup 100% seluruh layar */
         opacity: 1;
         transform: translate(-50%, -50%) rotate(var(--rot)) translate(var(--radius)) scale(22) rotate(540deg);
       }
       100% {
-        /* Menghilang halus setelah transisi ke layer utama selesai */
         transform: translate(-50%, -50%) rotate(var(--rot)) translate(var(--radius)) scale(30) rotate(720deg);
         opacity: 0;
       }
@@ -756,6 +754,66 @@
       0% { opacity: 1; transform: translate(-50%, -50%) scale(0.8); }
       100% { opacity: 0; transform: translate(-50%, -120px) scale(1.6); }
     }
+
+    /* ================= OPTIMASI KHUSUS TAMPILAN HP (MOBILE RESPONSIVE) ================= */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.8rem;
+      }
+
+      .gate-container {
+        transform: scale(0.72);
+        transform-origin: center center;
+        height: 380px;
+      }
+
+      .pol-right-2, .pol-right-3 {
+        display: none;
+      }
+
+      .flower-top-left { left: 40px; top: 10px; width: 80px; }
+      .flower-bottom-right { right: 40px; bottom: 10px; width: 80px; }
+
+      .sticky-nav {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 8px 10px;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .nav-btn {
+        flex: 0 0 auto;
+        font-size: 0.78rem;
+        padding: 5px 10px;
+      }
+
+      .gallery {
+        gap: 12px;
+      }
+
+      .polaroid {
+        width: 140px;
+        padding: 8px 8px 12px 8px;
+      }
+
+      .polaroid img {
+        height: 125px;
+      }
+
+      .music-widget {
+        bottom: 12px;
+        right: 12px;
+        padding: 6px 12px;
+        font-size: 0.75rem;
+      }
+
+      .music-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -974,9 +1032,8 @@
       if (e.key === 'Enter') checkPassword();
     });
 
-    // ================= EFEK KEJUTAN PUSARAN BUNGA MELINGKAR (SYSTEM 10 SLOT PNG FULLSCREEN TOTAL) =================
+    // ================= EFEK KEJUTAN PUSARAN BUNGA MELINGKAR (OPTIMASI RESPONSIVE HP) =================
     function triggerFlowerVortex(onCoverCallback) {
-      // 10 Slot Gambar PNG
       const flowerSlots = [
         'image/flower.png',
         'image/flower.png',
@@ -990,19 +1047,18 @@
         'image/flower.png'
       ];
 
-      const totalParticles = 60; // Ditambah jadi 80 partikel agar menutup 100% rapat
+      const totalParticles = 80;
+      const isMobile = window.innerWidth <= 600;
 
       for (let i = 0; i < totalParticles; i++) {
         setTimeout(() => {
           const flower = document.createElement('img');
           flower.className = 'vortex-flower';
           
-          // Ambil acak dari 10 slot PNG
           const randomSlot = flowerSlots[Math.floor(Math.random() * flowerSlots.length)];
           flower.src = randomSlot;
           flower.alt = 'Vortex Flower';
 
-          // Hitung sudut melingkar rapat & jangkauan sekeliling layar
           const angle = (i / totalParticles) * 360 * 5; 
           const maxDimension = Math.max(window.innerWidth, window.innerHeight);
           const radius = maxDimension * 0.85 + (Math.random() * 200 - 100);
@@ -1010,19 +1066,18 @@
           flower.style.setProperty('--rot', `${angle}deg`);
           flower.style.setProperty('--radius', `${radius}px`);
           
-          // Variasi acak ukuran dasar tiap slot PNG (70px - 120px)
-          const randomSize = 70 + Math.random() * 50;
+          // Penyesuaian ukuran bunga di HP agar tidak lag / pecah
+          const baseSize = isMobile ? 45 : 70;
+          const randomSize = baseSize + Math.random() * (isMobile ? 25 : 50);
           flower.style.width = `${randomSize}px`;
           flower.style.height = `${randomSize}px`;
 
           document.body.appendChild(flower);
 
-          // Hapus otomatis dari DOM setelah animasi selesai
           setTimeout(() => flower.remove(), 3000);
-        }, i * 20); // Interval cepat untuk ledakan visual
+        }, i * 20);
       }
 
-      // Saat layar tertutup rapat 100% oleh bunganya (detik ke 1.7s), switch ke Layer Utama!
       setTimeout(() => {
         if (typeof onCoverCallback === 'function') {
           onCoverCallback();
@@ -1030,9 +1085,8 @@
       }, 1700);
     }
 
-    // ================= TRANSISI DARI LAYER 2 KE LAYER 3 (SETELAH VORTEX COVER LAYAR FULL) =================
+    // ================= TRANSISI DARI LAYER 2 KE LAYER 3 =================
     function enterMainGreeting() {
-      // Panggil vortex bunga dulu, saat layar tertutup 100% baru buka layer utama
       triggerFlowerVortex(() => {
         const gate = document.getElementById('interactive-gate');
         gate.style.opacity = '0';
