@@ -277,54 +277,54 @@
     /* 1. KANAN ATAS: LOVE FRAME */
     .love-frame-left {
       position: absolute;
-      right: 200px;
-      top: 35px;
-      width: 165px;
-      height: 165px;
+      right: 220px;
+      top: 65px;
+      width: 140px;
+      height: 140px;
       background: white;
-      padding: 8px;
+      padding: 6px;
       box-shadow: 0 12px 28px rgba(0,0,0,0.12);
       transform: rotate(10deg);
       z-index: 6;
-      clip-path: path('M 105 32 C 81 -16, 0 0, 0 71 C 0 128, 105 192, 105 192 C 105 192, 210 128, 210 71 C 210 0, 129 -16, 105 32 Z');
+      clip-path: path('M 70 21 C 54 -10, 0 0, 0 47 C 0 85, 70 128, 70 128 C 70 128, 140 85, 140 47 C 140 0, 86 -10, 70 21 Z');
     }
 
     .love-frame-left img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      clip-path: path('M 95 29 C 73 -14, 0 0, 0 64 C 0 115, 95 173, 95 173 C 95 173, 190 115, 190 64 C 190 0, 117 -14, 95 29 Z');
+      clip-path: path('M 63 19 C 48 -9, 0 0, 0 42 C 0 76, 63 115, 63 115 C 63 115, 126 76, 126 42 C 126 0, 78 -9, 63 19 Z');
     }
 
     .polaroid-stack {
       position: absolute;
       background: white;
-      padding: 10px 10px 28px 10px;
+      padding: 8px 8px 24px 8px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.12);
       border-radius: 4px;
     }
 
     .polaroid-stack img {
-      width: 120px;
-      height: 120px;
+      width: 115px;
+      height: 115px;
       object-fit: cover;
       display: block;
     }
 
     /* 2. KIRI ATAS: POLAROID KOTAK 1 */
-    .pol-right-1 { left: 200px; top: 35px; transform: rotate(-8deg); z-index: 6; }
+    .pol-right-1 { left: 220px; top: 65px; transform: rotate(-8deg); z-index: 6; }
 
     /* 3. BAWAH AMPLOP: 3 POLAROID KOTAK */
-    .pol-left-bottom { left: 190px; bottom: 35px; transform: rotate(-6deg); z-index: 11; }
-    .pol-right-2 { left: 350px; bottom: 25px; transform: rotate(2deg); z-index: 11; }
-    .pol-right-3 { right: 190px; bottom: 35px; transform: rotate(8deg); z-index: 11; }
+    .pol-left-bottom { left: 200px; bottom: 65px; transform: rotate(-6deg); z-index: 11; }
+    .pol-right-2 { left: 350px; bottom: 55px; transform: rotate(2deg); z-index: 11; }
+    .pol-right-3 { right: 200px; bottom: 65px; transform: rotate(8deg); z-index: 11; }
 
     /* ORNAMEN DESKTOP */
     .png-ornament { position: absolute; pointer-events: none; }
-    .flower-top-left { width: 90px; left: 140px; top: 20px; z-index: 15; animation: flowerSway 3.8s infinite ease-in-out; }
-    .flower-bottom-right { width: 100px; right: 140px; bottom: 25px; z-index: 15; animation: flowerSway 4.2s infinite ease-in-out reverse; }
-    .butterfly-png { width: 85px; left: 150px; bottom: 120px; z-index: 22; animation: butterflyWiggle 3s infinite ease-in-out; }
-    .ornament-top-right-mid-polaroid { width: 65px; right: 150px; top: 120px; z-index: 25; animation: ornamentFloat 3.5s infinite ease-in-out; }
+    .flower-top-left { width: 85px; left: 150px; top: 35px; z-index: 15; animation: flowerSway 3.8s infinite ease-in-out; }
+    .flower-bottom-right { width: 90px; right: 150px; bottom: 40px; z-index: 15; animation: flowerSway 4.2s infinite ease-in-out reverse; }
+    .butterfly-png { width: 75px; left: 170px; bottom: 140px; z-index: 22; animation: butterflyWiggle 3s infinite ease-in-out; }
+    .ornament-top-right-mid-polaroid { width: 60px; right: 170px; top: 140px; z-index: 25; animation: ornamentFloat 3.5s infinite ease-in-out; }
 
     @keyframes butterflyWiggle {
       0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
@@ -760,7 +760,7 @@
       100% { opacity: 0; transform: translate(-50%, -120px) scale(1.6); }
     }
 
-    /* ================= OPTIMASI RESPONSIVE HP (PERSISI MEPET AMPLOP: LOVE KANAN ATAS, KOTAK KIRI ATAS, 3 KOTAK BAWAH) ================= */
+    /* ================= OPTIMASI RESPONSIVE HP (REVISI SANGAT MEPET AMPLOP & LOVE UTUH) ================= */
     @media (max-width: 600px) {
       h1 {
         font-size: 2.8rem;
@@ -770,7 +770,7 @@
       .gate-container {
         width: 100%;
         max-width: 360px;
-        height: 460px;
+        height: 440px;
         transform: none;
       }
 
@@ -797,61 +797,67 @@
 
       /* SKALA FOTO HP */
       .polaroid-stack {
-        padding: 4px 4px 14px 4px;
+        padding: 4px 4px 12px 4px;
       }
 
       .polaroid-stack img {
-        width: 72px;
-        height: 72px;
+        width: 68px;
+        height: 68px;
       }
 
-      /* 1. KIRI ATAS: POLAROID KOTAK 1 (Mepet Amplop) */
+      /* 1. KIRI ATAS: POLAROID KOTAK 1 (Ditempel Sangat Mepet Ke Bibir Amplop Atas) */
       .pol-right-1 {
-        left: 42px;
-        top: 45px;
-        transform: rotate(-10deg);
-        z-index: 6;
-      }
-
-      /* 2. KANAN ATAS: LOVE FRAME (Mepet Amplop) */
-      .love-frame-left {
-        width: 98px;
-        height: 98px;
-        right: 42px;
-        top: 45px;
-        left: auto; /* reset left */
-        padding: 5px;
-        transform: rotate(12deg);
-        z-index: 6;
-      }
-
-      /* 3. BAWAH AMPLOP: 3 POLAROID KOTAK (Mepet Amplop Berjejer Simetris) */
-      .pol-left-bottom {
-        left: 20px;
-        bottom: 55px;
+        left: 55px;
+        top: 85px;
         transform: rotate(-8deg);
+        z-index: 6;
+      }
+
+      /* 2. KANAN ATAS: LOVE FRAME (Bentuk Love Utuh & Presisi Mepet Amplop) */
+      .love-frame-left {
+        width: 82px;
+        height: 82px;
+        right: 55px;
+        top: 85px;
+        left: auto;
+        padding: 4px;
+        transform: rotate(10deg);
+        z-index: 6;
+        /* Clip path proporsional agar hati terbentuk sempurna & ramping di HP */
+        clip-path: path('M 41 12 C 32 -6, 0 0, 0 28 C 0 50, 41 76, 41 76 C 41 76, 82 50, 82 28 C 82 0, 50 -6, 41 12 Z');
+      }
+
+      .love-frame-left img {
+        clip-path: path('M 37 11 C 29 -5, 0 0, 0 25 C 0 45, 37 68, 37 68 C 37 68, 74 45, 74 25 C 74 0, 45 -5, 37 11 Z');
+      }
+
+      /* 3. BAWAH AMPLOP: 3 POLAROID KOTAK (Mepet Ke Alas Amplop Bawah) */
+      .pol-left-bottom {
+        left: 28px;
+        bottom: 82px;
+        transform: rotate(-6deg);
         z-index: 11;
       }
 
       .pol-right-2 {
-        left: 135px;
-        bottom: 45px;
+        left: 136px;
+        bottom: 74px;
         transform: rotate(2deg);
         z-index: 11;
       }
 
       .pol-right-3 {
-        right: 20px;
-        bottom: 55px;
-        transform: rotate(8deg);
+        right: 28px;
+        bottom: 82px;
+        transform: rotate(6deg);
         z-index: 11;
       }
 
-      /* ORNAMEN LAYER 2 HP (Diproporsikan Mepet Sudut Layar) */
-      .flower-top-left { left: 8px; top: 12px; width: 48px; z-index: 20; }
-      .flower-bottom-right { right: 8px; bottom: 12px; width: 52px; z-index: 20; }
-      .butterfly-png { left: 10px; top: 170px; width: 42px; z-index: 22; }
-      .ornament-top-right-mid-polaroid { right: 10px; top: 170px; width: 40px; z-index: 25; }
+      /* ORNAMEN LAYER 2 HP (Dirapikan Mengapit Foto) */
+      .flower-top-left { left: 18px; top: 35px; width: 44px; z-index: 20; }
+      .flower-bottom-right { right: 18px; bottom: 35px; width: 46px; z-index: 20; }
+      .butterfly-png { left: 12px; top: 145px; width: 38px; z-index: 22; }
+      .ornament-top-right-mid-polaroid { right: 12px; top: 145px; width: 36px; z-index: 25; }
 
       /* Sticky Nav HP */
       .sticky-nav {
