@@ -189,7 +189,7 @@
       display: none;
     }
 
-    /* ================= LAYER 2: TRANSISI AMPLOP (DESKTOP) ================= */
+    /* ================= LAYER 2: TRANSISI AMPLOP (SETUP LAPTOP/DESKTOP) ================= */
     #interactive-gate {
       position: fixed;
       top: 0;
@@ -265,7 +265,7 @@
       border: 2px solid #ffccd5;
     }
 
-    /* --- FOTO LAYER 2 DESKTOP --- */
+    /* --- FOTO LAYER 2 LAPTOP --- */
     .love-frame-left {
       position: absolute;
       right: 220px;
@@ -307,7 +307,7 @@
     .pol-right-2 { left: 350px; bottom: 55px; transform: rotate(2deg); z-index: 12; }
     .pol-right-3 { right: 200px; bottom: 65px; transform: rotate(8deg); z-index: 12; }
 
-    /* ORNAMEN DESKTOP */
+    /* ORNAMEN LAPTOP */
     .png-ornament { position: absolute; pointer-events: none; }
     .flower-top-left { width: 75px; left: 200px; top: 35px; z-index: 25; animation: flowerSway 3.8s infinite ease-in-out; }
     .flower-bottom-right { width: 80px; right: 180px; bottom: 50px; z-index: 25; animation: flowerSway 4.2s infinite ease-in-out reverse; }
@@ -427,7 +427,7 @@
       gap: 8px;
     }
 
-    /* LAYER 1: GALERI POLAROID */
+    /* LAYER 3: GALERI POLAROID LAPTOP */
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -437,11 +437,11 @@
 
     .polaroid {
       background: white;
-      padding: 10px 10px 16px 10px;
-      border-radius: 6px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      padding: 12px 12px 20px 12px;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       cursor: pointer;
-      width: 165px;
+      width: 180px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -451,29 +451,29 @@
 
     .polaroid:hover {
       transform: scale(1.08) rotate(0deg) !important;
-      box-shadow: 0 10px 22px rgba(214, 51, 132, 0.2);
+      box-shadow: 0 12px 25px rgba(214, 51, 132, 0.25);
     }
 
     .polaroid img {
-      width: 120%;
-      height: 165px;
+      width: 100%;
+      height: 180px;
       object-fit: cover;
-      border-radius: 4px;
+      border-radius: 6px;
     }
 
     .polaroid .caption {
       font-family: 'Sacramento', cursive;
-      font-size: 1.25rem;
-      margin-top: 8px;
+      font-size: 1.4rem;
+      margin-top: 10px;
       color: #333;
     }
 
     .click-hint {
-      font-size: 0.65rem;
+      font-size: 0.7rem;
       color: #888;
     }
 
-    /* LAYER 2: MEMORY LANE (TIMELINE) */
+    /* MEMORY LANE (TIMELINE) */
     .timeline {
       max-width: 500px;
       margin: 0 auto;
@@ -515,7 +515,7 @@
       line-height: 1.5;
     }
 
-    /* LAYER 3: SURAT & DOA */
+    /* SURAT & DOA */
     .letter-card {
       background: #fff0f5;
       padding: 25px;
@@ -547,7 +547,7 @@
 
     .wish-btn:hover { transform: scale(1.03); }
 
-    /* LAYER 4: MINI QUIZ */
+    /* MINI QUIZ */
     .quiz-card {
       max-width: 480px;
       margin: 0 auto;
@@ -572,7 +572,7 @@
       background: #ffe6f0;
     }
 
-    /* LAYER 5: REMOTE TREAT (TRAKTIR LDR) */
+    /* REMOTE TREAT (TRAKTIR LDR) */
     .treat-card {
       max-width: 520px;
       margin: 0 auto;
@@ -740,25 +740,25 @@
       100% { opacity: 0; transform: translate(-50%, -120px) scale(1.6); }
     }
 
-    /* ================= OPTIMASI KHUSUS MOBILE RESPONSIVE (DIPERBESAR & PRESISI) ================= */
+    /* ================= SETUP KHUSUS LAYAR HP (MOBILE RESPONSIVE PERFECT) ================= */
     @media (max-width: 600px) {
       h1 { font-size: 2.8rem; }
 
       .gate-container {
         width: 100%;
         max-width: 360px;
-        height: 500px;
+        height: 520px;
         transform: none;
       }
 
-      /* Amplop di HP (Z-index: 10) */
+      /* Amplop HP */
       .envelope-wrapper {
-        width: 250px;
-        height: 165px;
+        width: 240px;
+        height: 160px;
         z-index: 10;
       }
 
-      .envelope-text-title { font-size: 2.3rem; }
+      .envelope-text-title { font-size: 2.2rem; }
       .envelope-date { font-size: 0.75rem; }
 
       .wax-seal {
@@ -767,30 +767,30 @@
         margin-top: 8px;
       }
 
-      /* SKALA FOTO HP (DIPERBESAR DARI 68px KE 95px BIKIN KELIATAN JELAS DAN CANTIK) */
+      /* LAYER 2 HP: FLOATING MEMORY CLOUD */
       .polaroid-stack { padding: 6px 6px 18px 6px; }
       .polaroid-stack img {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
       }
 
-      /* --- 1. POLAROID KOTAK KIRI ATAS (ATAS AMPLOP & MEPET BIBIR AMPLOP) --- */
+      /* 1. Polaroid Kiri Atas */
       .pol-right-1 {
-        left: 20px;
-        top: 48px;
-        transform: rotate(-8deg);
+        left: 18px;
+        top: 45px;
+        transform: rotate(-10deg);
         z-index: 15;
       }
 
-      /* --- 2. LOVE FRAME KANAN ATAS (DIPERBESAR & BENTUK PRESISI MEPET AMPLOP) --- */
+      /* 2. Love Frame Kanan Atas */
       .love-frame-left {
-        width: 125px;
-        height: 125px;
-        right: 20px;
-        top: 90px;
+        width: 110px;
+        height: 110px;
+        right: 18px;
+        top: 45px;
         left: auto;
         padding: 5px;
-        transform: rotate(10deg);
+        transform: rotate(12deg);
         z-index: 15;
         clip-path: path('M 52 15 C 40 -8, 0 0, 0 35 C 0 64, 52 97, 52 97 C 52 97, 104 64, 104 35 C 104 0, 64 -8, 52 15 Z');
       }
@@ -799,58 +799,77 @@
         clip-path: path('M 47 14 C 36 -7, 0 0, 0 32 C 0 58, 47 87, 47 87 C 47 87, 94 58, 94 32 C 94 0, 58 -7, 47 14 Z');
       }
 
-      /* --- 3. POLAROID 3 PCS BAWAH (MEPET DI BAWAH ALAS AMPLOP) --- */
+      /* 3. Polaroid 3 Pcs Bawah */
       .pol-left-bottom {
-        left: 8px;
-        bottom: 60px;
-        transform: rotate(-6deg);
+        left: 10px;
+        bottom: 55px;
+        transform: rotate(-8deg);
         z-index: 12;
       }
 
       .pol-right-2 {
-        left: 122px;
-        bottom: 50px;
+        left: 125px;
+        bottom: 42px;
         transform: rotate(2deg);
         z-index: 12;
       }
 
       .pol-right-3 {
-        right: 8px;
-        bottom: 60px;
-        transform: rotate(6deg);
+        right: 10px;
+        bottom: 55px;
+        transform: rotate(8deg);
         z-index: 12;
       }
 
-      /* --- 4. ORNAMEN PRESISI MENEMPEL DI SUDUT POLAROID (AESTHETIC) --- */
+      /* 4. Ornamen Kunci Sudut Foto HP */
       .flower-top-left {
-        left: 7px;
+        left: 2px;
         top: 25px;
-        width: 48px;
+        width: 45px;
         z-index: 25;
       }
 
       .ornament-top-right-mid-polaroid {
-        right: 5px;
-        top: 20px;
-        width: 44px;
+        right: 2px;
+        top: 25px;
+        width: 42px;
         z-index: 25;
       }
 
       .butterfly-png {
-        left: 5px;
-        bottom: 90px;
-        width: 44px;
+        left: 0px;
+        bottom: 120px;
+        width: 42px;
         z-index: 25;
       }
 
       .flower-bottom-right {
-        right: 5px;
-        bottom: 35px;
-        width: 48px;
+        right: 2px;
+        bottom: 38px;
+        width: 45px;
         z-index: 25;
       }
 
-      /* Sticky Nav HP */
+      /* LAYER 3 HP: UKURAN POLAROID BESAR & PROPORSIONAL */
+      .gallery { 
+        gap: 16px; 
+      }
+
+      .polaroid { 
+        width: 165px; /* Pas di jari & mata untuk layar HP */
+        padding: 10px 10px 16px 10px; 
+      }
+
+      .polaroid img { 
+        width: 100%;
+        height: 165px; 
+      }
+
+      .polaroid .caption {
+        font-size: 1.3rem;
+      }
+
+      /* Navigasi & Widget HP */
       .sticky-nav {
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -864,11 +883,6 @@
         font-size: 0.78rem;
         padding: 5px 10px;
       }
-
-      /* Galeri HP */
-      .gallery { gap: 12px; }
-      .polaroid { width: 120px; padding: 8px 8px 12px 8px; }
-      .polaroid img { height: 125px; }
 
       .music-widget {
         bottom: 12px;
@@ -933,7 +947,7 @@
         <div class="wax-seal"></div>
       </div>
 
-      <!-- ORNAMEN DEKORASI (DIKUNCI MENEMPEL DI FOTO) -->
+      <!-- ORNAMEN DEKORASI -->
       <img src="image/Bucket Lily.png" class="png-ornament flower-top-left" alt="Flower Top Left">
       <img src="image/butterflyy.png" class="png-ornament flower-bottom-right" alt="Flower Bottom Right">
       <img src="image/Butterfly Pinky.png" class="png-ornament butterfly-png" alt="Butterfly PNG">
@@ -944,7 +958,7 @@
     <div class="tap-surprise-btn" onclick="enterMainGreeting()">TAP FOR SURPRISE</div>
   </div>
 
-  <!-- LAYER 3: KONTEN UTAMA (BERURUTAN) -->
+  <!-- LAYER 3: KONTEN UTAMA -->
   <div class="container">
     
     <div class="hero-header">
