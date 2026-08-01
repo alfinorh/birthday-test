@@ -458,8 +458,8 @@
     }
 
     .polaroid img {
-      width: 100%;
-      height: 145px;
+      width: 120%;
+      height: 165px;
       object-fit: cover;
       border-radius: 4px;
     }
@@ -874,8 +874,8 @@
 
       /* Galeri HP */
       .gallery { gap: 12px; }
-      .polaroid { width: 140px; padding: 8px 8px 12px 8px; }
-      .polaroid img { height: 125px; }
+      .polaroid { width: 150px; padding: 8px 8px 12px 8px; }
+      .polaroid img { height: 135px; }
 
       .music-widget {
         bottom: 12px;
@@ -1142,7 +1142,7 @@
           flower.style.setProperty('--rot', `${angle}deg`);
           flower.style.setProperty('--radius', `${radius}px`);
           
-          const baseSize = isMobile ? 45 : 70;
+          const baseSize = isMobile ? 25 : 70;
           const randomSize = baseSize + Math.random() * (isMobile ? 25 : 50);
           flower.style.width = `${randomSize}px`;
           flower.style.height = `${randomSize}px`;
