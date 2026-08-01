@@ -230,7 +230,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      z-index: 10; /* AMPLOP DI MIDDLE LAYER */
+      z-index: 10;
       transition: transform 0.3s ease;
       border: 2px solid #ffccd5;
     }
@@ -276,7 +276,7 @@
       padding: 6px;
       box-shadow: 0 12px 28px rgba(0,0,0,0.12);
       transform: rotate(10deg);
-      z-index: 15; /* Z-INDEX DI ATAS AMPLOP */
+      z-index: 15;
       clip-path: path('M 67 20 C 52 -10, 0 0, 0 45 C 0 81, 67 122, 67 122 C 67 122, 135 81, 135 45 C 135 0, 82 -10, 67 20 Z');
     }
 
@@ -302,10 +302,7 @@
       display: block;
     }
 
-    /* 2 FOTO ATAS (Z-INDEX 15 MAKIN ATAS AMPLOP) */
     .pol-right-1 { left: 220px; top: 55px; transform: rotate(-8deg); z-index: 15; }
-
-    /* 3 FOTO BAWAH (Z-INDEX 12) */
     .pol-left-bottom { left: 200px; bottom: 65px; transform: rotate(-6deg); z-index: 12; }
     .pol-right-2 { left: 350px; bottom: 55px; transform: rotate(2deg); z-index: 12; }
     .pol-right-3 { right: 200px; bottom: 65px; transform: rotate(8deg); z-index: 12; }
@@ -743,117 +740,113 @@
       100% { opacity: 0; transform: translate(-50%, -120px) scale(1.6); }
     }
 
-    /* ================= OPTIMASI KHUSUS MOBILE RESPONSIVE (REVISI POSISI & MENEMPELKAN ORNAMEN) ================= */
+    /* ================= OPTIMASI KHUSUS MOBILE RESPONSIVE (DIPERBESAR & PRESISI) ================= */
     @media (max-width: 600px) {
       h1 { font-size: 2.8rem; }
 
       .gate-container {
         width: 100%;
         max-width: 360px;
-        height: 440px;
+        height: 500px;
         transform: none;
       }
 
       /* Amplop di HP (Z-index: 10) */
       .envelope-wrapper {
-        width: 230px;
-        height: 150px;
+        width: 250px;
+        height: 165px;
         z-index: 10;
       }
 
-      .envelope-text-title { font-size: 2.1rem; }
-      .envelope-date { font-size: 0.7rem; }
+      .envelope-text-title { font-size: 2.3rem; }
+      .envelope-date { font-size: 0.75rem; }
 
       .wax-seal {
-        width: 32px;
-        height: 32px;
-        margin-top: 6px;
+        width: 34px;
+        height: 34px;
+        margin-top: 8px;
       }
 
-      /* Skala Foto */
-      .polaroid-stack { padding: 4px 4px 12px 4px; }
+      /* SKALA FOTO HP (DIPERBESAR DARI 68px KE 95px BIKIN KELIATAN JELAS DAN CANTIK) */
+      .polaroid-stack { padding: 6px 6px 18px 6px; }
       .polaroid-stack img {
-        width: 68px;
-        height: 68px;
+        width: 95px;
+        height: 95px;
       }
 
-      /* --- 1. POLAROID KOTAK KIRI ATAS (MENUMPUK DENGAN AESTHETIC DI ATAS AMPLOP) --- */
+      /* --- 1. POLAROID KOTAK KIRI ATAS (ATAS AMPLOP & MEPET BIBIR AMPLOP) --- */
       .pol-right-1 {
-        left: 50px;
-        top: 70px; /* Diturunkan mepet ke atas amplop */
+        left: 20px;
+        top: 38px;
         transform: rotate(-8deg);
-        z-index: 15; /* Di atas amplop */
+        z-index: 15;
       }
 
-      /* --- 2. LOVE FRAME KANAN ATAS (BENTUK LOVE PRESISI & MEPET AMPLOP) --- */
+      /* --- 2. LOVE FRAME KANAN ATAS (DIPERBESAR & BENTUK PRESISI MEPET AMPLOP) --- */
       .love-frame-left {
-        width: 80px;
-        height: 80px;
-        right: 50px;
-        top: 80px; /* Diturunkan mepet ke atas amplop */
+        width: 105px;
+        height: 105px;
+        right: 20px;
+        top: 38px;
         left: auto;
-        padding: 4px;
+        padding: 5px;
         transform: rotate(10deg);
-        z-index: 15; /* Di atas amplop */
-        clip-path: path('M 40 12 C 31 -6, 0 0, 0 27 C 0 49, 40 74, 40 74 C 40 74, 80 49, 80 27 C 80 0, 49 -6, 40 12 Z');
+        z-index: 15;
+        clip-path: path('M 52 15 C 40 -8, 0 0, 0 35 C 0 64, 52 97, 52 97 C 52 97, 104 64, 104 35 C 104 0, 64 -8, 52 15 Z');
       }
 
       .love-frame-left img {
-        clip-path: path('M 36 11 C 28 -5, 0 0, 0 24 C 0 44, 36 66, 36 66 C 36 66, 72 44, 72 24 C 72 0, 44 -5, 36 11 Z');
+        clip-path: path('M 47 14 C 36 -7, 0 0, 0 32 C 0 58, 47 87, 47 87 C 47 87, 94 58, 94 32 C 94 0, 58 -7, 47 14 Z');
       }
 
-      /* --- 3. POLAROID 3 PCS BAWAH (MEPET KE ALAS AMPLOP) --- */
+      /* --- 3. POLAROID 3 PCS BAWAH (MEPET DI BAWAH ALAS AMPLOP) --- */
       .pol-left-bottom {
-        left: 25px;
-        bottom: 85px;
+        left: 8px;
+        bottom: 50px;
         transform: rotate(-6deg);
-        z-index: 12; /* Di atas tepi bawah amplop */
+        z-index: 12;
       }
 
       .pol-right-2 {
-        left: 136px;
-        bottom: 78px;
+        left: 122px;
+        bottom: 40px;
         transform: rotate(2deg);
         z-index: 12;
       }
 
       .pol-right-3 {
-        right: 25px;
-        bottom: 85px;
+        right: 8px;
+        bottom: 50px;
         transform: rotate(6deg);
         z-index: 12;
       }
 
-      /* --- 4. ORNAMEN PRESISI MENEMPEL DI SUDUT POLAROID (TIDAK TERBANG) --- */
-      /* Bunga kiri menempel di pojok kiri polaroid atas */
+      /* --- 4. ORNAMEN PRESISI MENEMPEL DI SUDUT POLAROID (AESTHETIC) --- */
       .flower-top-left {
-        left: 35px;
-        top: 65px;
-        width: 42px;
+        left: 5px;
+        top: 20px;
+        width: 48px;
         z-index: 25;
       }
 
-      /* Pita pink menempel di sudut kanan Love Frame atas */
       .ornament-top-right-mid-polaroid {
-        right: 35px;
-        top: 55px;
-        width: 38px;
+        right: 5px;
+        top: 20px;
+        width: 44px;
         z-index: 25;
       }
 
-      /* Kupu-kupu menempel di polaroid kiri bawah */
       .butterfly-png {
-        left: 10px;
-        bottom: 135px;
-        width: 38px;
+        left: 0px;
+        bottom: 110px;
+        width: 44px;
         z-index: 25;
       }
 
-      /* Bunga kanan bottom menempel di polaroid kanan bawah */
       .flower-bottom-right {
-        right: 15px;
-        bottom: 70px;
-        width: 42px;
+        right: 5px;
+        bottom: 30px;
+        width: 48px;
         z-index: 25;
       }
 
