@@ -1122,16 +1122,16 @@
     // ================= EFEK KEJUTAN PUSARAN BUNGA MELINGKAR (OPTIMASI RESPONSIVE HP) =================
     function triggerFlowerVortex(onCoverCallback) {
       const flowerSlots = [
-        'image/flower1.png',
-        'image/flower2.png',
-        'image/flower3.png',
-        'image/flower4.png',
-        'image/flower5.png',
-        'image/flower6.png',
-        'image/flower7.png',
-        'image/flower8.png',
-        'image/flower9.png',
-        'image/flower10.png'
+        'image/flower.png',
+        'image/flower.png',
+        'image/flower.png',
+        'image/flower.png',
+        'image/flower.png',
+        'image/flower.png',
+        'image/flower.png',
+        'image/flower.png',
+        'image/flower.png',
+        'image/flower.png'
       ];
 
       const totalParticles = 80;
@@ -1153,8 +1153,8 @@
           flower.style.setProperty('--rot', `${angle}deg`);
           flower.style.setProperty('--radius', `${radius}px`);
           
-          const baseSize = isMobile ? 45 : 70;
-          const randomSize = baseSize + Math.random() * (isMobile ? 25 : 50);
+          const baseSize = isMobile ? 45 : 50;
+          const randomSize = baseSize + Math.random() * (isMobile ? 25 : 30);
           flower.style.width = `${randomSize}px`;
           flower.style.height = `${randomSize}px`;
 
