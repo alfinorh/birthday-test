@@ -424,10 +424,37 @@
       animation-delay: 0.9s;
     }
 
-    .flower-top-left { left: 0%; top: 20%; --rot: 0deg; }
-    .flower-bottom-right { right: 0%; bottom: 18%; --rot: 0deg; }
-    .butterfly-png { left: 2%; bottom: 36%; --rot: 0deg; }
-    .ornament-top-right-mid-polaroid { right: 2%; top: 1%; --rot: 0deg; }
+    /*
+      Posisi ornamen sekarang ditaruh di 4 "celah" yang masih kosong di antara foto:
+      kiri-tengah, kanan-tengah, bawah-tengah, atas-tengah (di atas bingkai hati).
+      Titik jangkarnya tetap % (bukan px) biar proporsional di HP & laptop.
+      Yang pakai top:50%/left:50% dikasih margin negatif setengah lebar/tinggi ornamen
+      (bukan transform:translate) supaya nggak bentrok sama animasi mengambang di bawah.
+    */
+    .flower-top-left {
+      left: -1%;
+      top: 50%;
+      margin-top: clamp(-39px, -3.25vw, -19px);
+      --rot: 0deg;
+    }
+    .flower-bottom-right {
+      right: -1%;
+      top: 50%;
+      margin-top: clamp(-39px, -3.25vw, -19px);
+      --rot: 0deg;
+    }
+    .butterfly-png {
+      left: 50%;
+      bottom: -2%;
+      margin-left: clamp(-39px, -3.25vw, -19px);
+      --rot: 0deg;
+    }
+    .ornament-top-right-mid-polaroid {
+      left: 50%;
+      top: -4%;
+      margin-left: clamp(-39px, -3.25vw, -19px);
+      --rot: 0deg;
+    }
 
     /* setelah muncul, ornamen lanjut animasi mengambang masing-masing */
     .flower-top-left { animation-name: photoAppearPlain, flowerSway; animation-duration: 0.7s, 3.8s; animation-delay: 0.9s, 1.6s; animation-iteration-count: 1, infinite; animation-timing-function: ease, ease-in-out; animation-fill-mode: forwards, none; }
